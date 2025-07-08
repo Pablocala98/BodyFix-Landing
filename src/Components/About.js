@@ -17,13 +17,13 @@ const About = () => {
                         Get to know us
                     </h1>
                     <p className='primary-text'>
-                        We are a team of fitness enthusiasts who are dedicated to helping you achieve your fitness goals.
+                    We are a team of wellness professionals passionate about helping you achieve your health goals through therapeutic and relaxing massages.
                     </p>
                     <p className='primary-text'>
-                        Professional and experienced trainers to help you in your fitness journey.
+                        Professional and experienced trainers to help you in your therapeutic journey.
                     </p>
                     <div className='about-buttons-container'>
-                        <button className='secondary-button'>Learn More</button>
+                        <button className='secondary-button'>Download App</button>
                         <button className='watch-video-button'><BsFillPlayCircleFill/>Watch video</button>
                     </div>
                 </div>

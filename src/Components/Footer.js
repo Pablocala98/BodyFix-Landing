@@ -1,9 +1,9 @@
 import React from 'react'
-import Logo from '../Assets/Logo.svg'
-import {BsTwitter} from 'react-icons/bs'
+import Logo from '../Assets/Logo.png'
 import {SiLinkedin} from 'react-icons/si'
 import {BsYoutube} from 'react-icons/bs'
 import {FaFacebookF} from 'react-icons/fa'
+import {BsInstagram} from 'react-icons/bs'
 
 const Footer = () => {
     return <div className='footer-wrapper'>
@@ -12,7 +12,7 @@ const Footer = () => {
                 <img src={Logo} alt="" />
             </div>
             <div className='footer-icons'>
-                <BsTwitter/>
+                <BsInstagram/>
                 <SiLinkedin/>
                 <BsYoutube/>
                 <FaFacebookF/>

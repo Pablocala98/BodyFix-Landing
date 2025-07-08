@@ -15,10 +15,10 @@ const Home = () => {
             </div>
             <div className='home-text-section'>
                 <h1 className='primary-heading'>
-                    Your Personalized Fitness Journey Starts Here
+                    Your Personalized Wellness Journey Starts Here
                 </h1>
                 <p className='primary-text'>
-                    Health and fitness are the key to a happy and fulfilling life.
+                    Health and well-being are the key to a happy and fulfilling life.
                 </p>
                 <button className='secondary-button'>
                     Bookings Now <FiArrowRight />

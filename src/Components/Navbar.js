@@ -1,37 +1,36 @@
 import React, {useState} from 'react'
-import Logo from '../Assets/Logo.svg'
-import { BsCart2 } from 'react-icons/bs'
+import Logo from '../Assets/Logo.png'
 import { HiOutlineBars3 } from 'react-icons/hi2'
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
-import HomeIcon from '@mui/icons-material/Home'
 import InfoIcon from '@mui/icons-material/Info'
 import CommentRoundedIcon from '@mui/icons-material/CommentRounded'
 import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded'
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded'
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
 const Navbar = () => {
 
     const [openMenu, setOpenMenu] = useState(false)
     const menuOptions = [
         {
-            text: 'Home',
-            icon: <HomeIcon />,
-        },
-        {
             text: 'About',
             icon: <InfoIcon />,
+            action: () => document.querySelector('.about-section-container').scrollIntoView({behavior: 'smooth'})
         },
         {
             text: 'Testimonials',
             icon: <CommentRoundedIcon />,
+            action: () => document.querySelector('.work-section-wrapper').scrollIntoView({behavior: 'smooth'})
         },
         {
             text: 'Contact',
             icon: <PhoneRoundedIcon />,
+            action: () => document.querySelector('.contact-page-wrapper').scrollIntoView({behavior: 'smooth'})
         },
         {
-            text: 'Cart',
-            icon: <ShoppingCartRoundedIcon />,
+            text: 'Download App',
+            icon: <ArrowCircleDownIcon />,
+            action: () => console.log('Bookings Now clicked')
         }
     ]
 
@@ -60,7 +59,7 @@ const Navbar = () => {
             <List>
                 {menuOptions.map((item)=>(
                     <ListItem key={item.text} disablePadding>
-                        <ListItemButton>
+                        <ListItemButton onClick={item.action}>
                             <ListItemIcon>{item.icon}</ListItemIcon>
                             <ListItemText primary={item.text} />
                         </ListItemButton>

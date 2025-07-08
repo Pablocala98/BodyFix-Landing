@@ -9,12 +9,12 @@ const Testimonial = () => {
             <p className='primary-subheading'>Testimonials</p>
             <h1 className='primary-heading'>What they say</h1>
             <p className='primary-text'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+            Our users trust BodyFix to improve their well-being. Here’s what some of them have to say about their experience.
             </p>
         </div>
         <div className='testimonial-section-bottom'>
             <img src={ProfilePic} alt="" />
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus dolore saepe quam cum rem quisquam doloremque modi ea maxime, quod deleniti animi sunt dignissimos. Dolores accusamus optio inventore animi rerum.</p>
+            <p>Booking a massage has never been this easy. Within minutes everything was scheduled and the therapist arrived right on time. It was a relaxing, safe, and highly professional experience. I highly recommend BodyFix!</p>
             <div className='testimonials-stars-container'>
                 <AiFillStar />
                 <AiFillStar />  
