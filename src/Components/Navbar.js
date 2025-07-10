@@ -1,31 +1,53 @@
 import React, {useState} from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import Logo from '../Assets/Logo.png'
 import { HiOutlineBars3 } from 'react-icons/hi2'
 import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import InfoIcon from '@mui/icons-material/Info'
 import CommentRoundedIcon from '@mui/icons-material/CommentRounded'
 import PhoneRoundedIcon from '@mui/icons-material/PhoneRounded'
-import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded'
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 
 const Navbar = () => {
-
+    const navigate = useNavigate();
+    const location = useLocation();
     const [openMenu, setOpenMenu] = useState(false)
+
+    const scrollToSection = (sectionClass) => {
+        if (location.pathname !== '/') {
+            // Si no estamos en la página principal, navegar primero a home
+            navigate('/');
+            // Esperar un poco para que la página se cargue y luego hacer scroll
+            setTimeout(() => {
+                const element = document.querySelector(sectionClass);
+                if (element) {
+                    element.scrollIntoView({behavior: 'smooth'});
+                }
+            }, 100);
+        } else {
+            // Si estamos en la página principal, hacer scroll directamente
+            const element = document.querySelector(sectionClass);
+            if (element) {
+                element.scrollIntoView({behavior: 'smooth'});
+            }
+        }
+    };
+
     const menuOptions = [
         {
             text: 'About',
             icon: <InfoIcon />,
-            action: () => document.querySelector('.about-section-container').scrollIntoView({behavior: 'smooth'})
+            action: () => scrollToSection('.about-section-container')
         },
         {
             text: 'Testimonials',
             icon: <CommentRoundedIcon />,
-            action: () => document.querySelector('.work-section-wrapper').scrollIntoView({behavior: 'smooth'})
+            action: () => scrollToSection('.work-section-wrapper')
         },
         {
             text: 'Contact',
             icon: <PhoneRoundedIcon />,
-            action: () => document.querySelector('.contact-page-wrapper').scrollIntoView({behavior: 'smooth'})
+            action: () => scrollToSection('.contact-page-wrapper')
         },
         {
             text: 'Download App',
@@ -36,12 +58,12 @@ const Navbar = () => {
 
   return <nav>
     <div className='nav-logo-container'>
-        <img src={Logo} alt='' />
+        <img src={Logo} alt='' onClick={() => navigate('/')} style={{cursor: 'pointer'}} />
     </div>
     <div className='navbar-links-container'>
-        <a href="#" onClick={() => document.querySelector('.about-section-container').scrollIntoView({behavior: 'smooth'})}>About</a>
-        <a href="#" onClick={() => document.querySelector('.work-section-wrapper').scrollIntoView({behavior: 'smooth'})}>Testimonials</a>
-        <a href="#" onClick={() => document.querySelector('.contact-page-wrapper').scrollIntoView({behavior: 'smooth'})}>Contact</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('.about-section-container'); }}>About</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('.work-section-wrapper'); }}>Testimonials</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('.contact-page-wrapper'); }}>Contact</a>
 
         <button className='primary-button'>
             Bookings Now

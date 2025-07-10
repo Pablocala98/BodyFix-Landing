@@ -11,9 +11,9 @@ const Contact = () => {
 
     const handleSubmit = () => {
         if (validateEmail(email)) {
-            setMessage('Correo aceptado, pronto nos contactaremos con usted');
+            setMessage('Email accepted, we will contact you soon');
         } else {
-            setMessage('Correo no válido, vuelva a intentar');
+            setMessage('Invalid email, please try again');
         }
     };
 
